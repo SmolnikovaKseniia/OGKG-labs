@@ -69,7 +69,10 @@ def voronoi_diagram(centroids, canvas_size=(960, 540)):
 def plot_results(data, centroids, canvas_size=(960, 540)):
     fig, ax = voronoi_diagram(centroids, canvas_size)
 
+    # Відображення центрів ваги
     ax.scatter(centroids[:, 0], centroids[:, 1], color='blue', s=20, zorder=2)
+
+    # Відображення точок вихідного датасету чорним кольором з насиченістю 10%
     ax.scatter(data[:, 0], data[:, 1], color='black', alpha=0.1, s=2, zorder=0)
 
     ax.set_xlim([0, canvas_size[0]])
